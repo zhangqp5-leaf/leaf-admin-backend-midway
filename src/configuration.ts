@@ -4,13 +4,16 @@ import * as validate from '@midwayjs/validate';
 import * as info from '@midwayjs/info';
 import { join } from 'path';
 import { ReportMiddleware } from './middleware/report.middleware';
+import { ResponseFormatterMiddleware } from './middleware/responseFormatter.middleware';
 import * as view from '@midwayjs/view-nunjucks';
+import * as orm from '@midwayjs/typeorm';
 import { WeatherErrorFilter } from './filter/weather.filter';
 
 @Configuration({
   imports: [
     koa,
     validate,
+    orm,
     {
       component: info,
       enabledEnvironment: ['local'],
@@ -25,7 +28,7 @@ export class MainConfiguration {
 
   async onReady() {
     // add middleware
-    this.app.useMiddleware([ReportMiddleware]);
+    this.app.useMiddleware([ResponseFormatterMiddleware, ReportMiddleware]);
     // add filter
     this.app.useFilter([WeatherErrorFilter]);
   }

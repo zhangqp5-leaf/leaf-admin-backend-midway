@@ -1,14 +1,30 @@
-import { Provide } from '@midwayjs/core';
+import { Provide, Inject } from '@midwayjs/core';
+import { User } from '../entity/user.entity';
+import { InjectEntityModel } from '@midwayjs/typeorm';
+import { Repository } from 'typeorm';
 import { IUserOptions } from '../interface';
+import * as svgCaptcha from 'svg-captcha';
+import { IdGeneratorService } from '../utils/idGenerator';
 
 @Provide()
 export class UserService {
+  @Inject()
+  idGeneratorService: IdGeneratorService;
+
+  @InjectEntityModel(User)
+  userModel: Repository<User>;
+
   async getUser(options: IUserOptions) {
+    let allUsers = await this.userModel.find({});
+    return allUsers;
+  }
+
+  async getCaptcha() {
+    const captchaId = this.idGeneratorService.generateId();
+    let code = svgCaptcha.create();
     return {
-      uid: options.uid,
-      username: 'mockedName',
-      phone: '12345678901',
-      email: 'xxx.xxx@xxx.com',
+      captchaId: captchaId,
+      verifyCode: code.data,
     };
   }
 }

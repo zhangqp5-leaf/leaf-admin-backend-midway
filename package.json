@@ -11,8 +11,15 @@
     "@midwayjs/koa": "^3.12.0",
     "@midwayjs/logger": "^3.1.0",
     "@midwayjs/static-file": "^3.4.12",
+    "@midwayjs/typeorm": "^3.15.0",
     "@midwayjs/validate": "^3.12.0",
-    "@midwayjs/view-nunjucks": "^3.4.12"
+    "@midwayjs/view-nunjucks": "^3.4.12",
+    "@types/lodash": "^4.14.202",
+    "lodash": "^4.17.21",
+    "mysql": "^2.18.1",
+    "nodejs-snowflake": "^2.0.1",
+    "svg-captcha": "^1.4.0",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@midwayjs/mock": "^3.12.0",
