@@ -7,6 +7,8 @@ import { ReportMiddleware } from './middleware/report.middleware';
 import { ResponseFormatterMiddleware } from './middleware/responseFormatter.middleware';
 import * as view from '@midwayjs/view-nunjucks';
 import * as orm from '@midwayjs/typeorm';
+import * as redis from '@midwayjs/redis';
+import * as upload from '@midwayjs/upload';
 import { WeatherErrorFilter } from './filter/weather.filter';
 
 @Configuration({
@@ -14,6 +16,8 @@ import { WeatherErrorFilter } from './filter/weather.filter';
     koa,
     validate,
     orm,
+    redis,
+    upload,
     {
       component: info,
       enabledEnvironment: ['local'],

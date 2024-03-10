@@ -1,9 +1,10 @@
 import { Controller, Get } from '@midwayjs/core';
+import { homeInfo } from '../utils/const';
 
-@Controller('/')
+@Controller('/api')
 export class HomeController {
-  @Get('/')
-  async home(): Promise<string> {
-    return 'Hello Midwayjs!';
+  @Get('/home/info')
+  async home() {
+    return homeInfo;
   }
 }
