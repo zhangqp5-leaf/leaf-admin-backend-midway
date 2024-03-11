@@ -15,8 +15,9 @@ export default {
   redis: {
     client: {
       port: 6379, // Redis port
-      host: "127.0.0.1", // Redis host
-      // password: "auth",
+      // host: "127.0.0.1", // Redis host
+      host: "122.51.12.76", // Redis host
+      password: "ysn219zqp221",
       // db: 0,
     },
   },
@@ -24,10 +25,10 @@ export default {
     dataSource: {
       default :{
         type: 'mysql',
-        host: 'localhost',
+        host: '122.51.12.76',
         port: 3306,
         username: 'root',
-        password: 'ysn219zqp221',
+        password: 'YSN219@zqp221',
         database: 'leaf_admin',
         synchronize: true, // 如果在生产环境，应禁用它
         logging: true, // 打印日志，对于调试很有用，但在生产环境可能需要关闭
