@@ -66,7 +66,7 @@ export class FileSpaceController {
     const file = files[0];
     const filename = file.filename;
     console.log({filename});
-    const target = path.join('E:/fronted_project/leaf-admin/leaf-admin-backend/public/images', filename);
+    const target = path.join('/root/backend/leaf-admin-backend/public/images', filename);
 
     // 使用fs模块将临时文件保存到目标路径
     const readStream = fs.createReadStream(file.data);
@@ -78,7 +78,7 @@ export class FileSpaceController {
       writeStream.on('error', err => reject(err));
     });
     return {
-      url: `http://192.168.2.181:2119/static/images/${filename}`,
+      url: `http://http://122.51.12.76:2119/static/images/${filename}`,
     }
   }
   // 添加文件
