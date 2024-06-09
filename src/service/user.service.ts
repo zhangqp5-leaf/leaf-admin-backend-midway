@@ -44,12 +44,12 @@ export class UserService {
   async login(dto) {
     const {username, password, verifyCode, captchaId} = dto;
     // 验证验证码
-    // const storedCode = await this.redisService.get(captchaId);
-    // if (!storedCode) {
-    //   throw new Error('验证码已过期');
-    // } else if (storedCode !== verifyCode) {
-    //   throw new Error('验证码错误');
-    // }
+    const storedCode = await this.redisService.get(captchaId);
+    if (!storedCode) {
+      throw new Error('验证码已过期');
+    } else if (storedCode !== verifyCode) {
+      throw new Error('验证码错误');
+    }
     console.log(verifyCode, captchaId);
     const result = await this.userModel.findOne({
       where: { username: username, password: password }

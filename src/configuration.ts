@@ -5,6 +5,7 @@ import * as info from '@midwayjs/info';
 import { join } from 'path';
 import { ReportMiddleware } from './middleware/report.middleware';
 import { ResponseFormatterMiddleware } from './middleware/responseFormatter.middleware';
+import { VerifyTokenMiddleware } from './middleware/verifyToken.middleware';
 import * as view from '@midwayjs/view-nunjucks';
 import * as orm from '@midwayjs/typeorm';
 import * as redis from '@midwayjs/redis';
@@ -32,7 +33,7 @@ export class MainConfiguration {
 
   async onReady() {
     // add middleware
-    this.app.useMiddleware([ResponseFormatterMiddleware, ReportMiddleware]);
+    this.app.useMiddleware([VerifyTokenMiddleware, ResponseFormatterMiddleware, ReportMiddleware]);
     // add filter
     this.app.useFilter([WeatherErrorFilter]);
   }
