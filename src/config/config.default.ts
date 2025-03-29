@@ -16,7 +16,7 @@ export default {
     client: {
       port: 6379, // Redis port
       // host: "127.0.0.1", // Redis host
-      host: "122.51.12.76", // Redis host
+      host: "118.31.168.157", // Redis host
       password: "ysn219zqp221",
       // db: 0,
     },
@@ -25,7 +25,7 @@ export default {
     dataSource: {
       default :{
         type: 'mysql',
-        host: '122.51.12.76',
+        host: '118.31.168.157',
         port: 3306,
         username: 'root',
         password: 'YSN219@zqp221',
