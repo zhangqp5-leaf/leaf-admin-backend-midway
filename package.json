@@ -20,6 +20,7 @@
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "mysql": "^2.18.1",
+    "mysql2": "^3.14.0",
     "nodejs-snowflake": "^2.0.1",
     "svg-captcha": "^1.4.0",
     "typeorm": "^0.3.20"

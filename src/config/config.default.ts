@@ -25,6 +25,7 @@ export default {
     dataSource: {
       default :{
         type: 'mysql',
+        driver: require('mysql2'),
         host: '118.31.168.157',
         port: 3306,
         username: 'root',
