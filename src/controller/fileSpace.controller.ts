@@ -78,7 +78,7 @@ export class FileSpaceController {
       writeStream.on('error', err => reject(err));
     });
     return {
-      url: `http://122.51.12.76:2119/static/images/${filename}`,
+      url: `http://118.31.168.157:2119/static/images/${filename}`,
     }
   }
   // 添加文件
